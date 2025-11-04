@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Body Count Slider - No Filter</title>
+    <title>Body Count Commenter</title>
     <style>
         /* Reset and base styles */
         *, *::before, *::after {
@@ -147,32 +147,32 @@
         const commentDisplay = document.getElementById('comment');
 
         const comments = [
-            { range: "0",     text: "Virgin alert. Hope you at least jerk off properly." },
-            { range: "1-5",   text: "Congrats, you finally got laid. Was it worth the wait? Probably not." },
-            { range: "6-10",  text: "You're out here collecting bodies like Pokémon. Gotta bang 'em all!" },
-            { range: "11-15", text: "Your dick/pussy has more miles than a used Honda. Keep going, champ." },
-            { range: "16-20", text: "At this point, it's not dating — it's a body disposal service." },
-            { range: "21-25", text: "You need a spreadsheet, a lawyer, and a priest. In that order." },
-            { range: "26-30", text: "Your bed creaks more than a haunted house. Hope the neighbors are deaf." },
-            { range: "31-35", text: "You're not a slut — you're a full-time employee of Dick/Pussy Inc." },
-            { range: "36-40", text: "Your body count has its own zip code. Population: You." },
-            { range: "41-45", text: "You've fucked more people than most have met. Legend." },
-            { range: "46-50", text: "You're a walking biohazard. The CDC is taking notes." },
-            { range: "51-55", text: "Your genitals need a vacation. And a tetanus shot." },
-            { range: "56-60", text: "You've had more partners than a swingers' convention. Respect." },
-            { range: "61-65", text: "Your hole/dick is basically public property at this point." },
-            { range: "66-70", text: "666 would be jealous. You're the devil's favorite customer." },
-            { range: "71-75", text: "You've banged your way through bloodlines. Ancestry.com is confused." },
-            { range: "76-80", text: "Your body count could fill a small cemetery. Rest in peace, dignity." },
-            { range: "81-85", text: "You're not human. You're a sex vending machine with legs." },
-            { range: "86-90", text: "You've had more cream in you than a bakery. Or given more. Same thing." },
-            { range: "91-95", text: "Your sex life has more plot twists than a soap opera." },
-            { range: "96-100",text: "World record. You've fucked the planet. Hope the clap was worth the fame." }
+            {      text: "Virgin alert. Hope you at least jerk off properly." },
+            {    text: "Congrats, you finally got laid. Was it worth the wait? Probably not." },
+            {   text: "You're out here collecting bodies like Pokémon. Gotta bang 'em all!" },
+            {  text: "Your dick/pussy has more miles than a used Honda. Keep going, champ." },
+            {  text: "At this point, it's not dating — it's a body disposal service." },
+            {  text: "You need a spreadsheet, a lawyer, and a priest. In that order." },
+            {  text: "Your bed creaks more than a haunted house. Hope the neighbors are deaf." },
+            {  text: "You're not a slut — you're a full-time employee of Dick/Pussy Inc." },
+            {  text: "Your body count has its own zip code. Population: You." },
+            {  text: "You've fucked more people than most have met. Legend." },
+            { text: "You're a walking biohazard. The CDC is taking notes." },
+            {  text: "Your genitals need a vacation. And a tetanus shot." },
+            {  text: "You've had more partners than a swingers' convention. Respect." },
+            {  text: "Your hole/dick is basically public property at this point." },
+            {  text: "666 would be jealous. You're the devil's favorite customer." },
+            {  text: "You've banged your way through bloodlines. Ancestry.com is confused." },
+            {  text: "Your body count could fill a small cemetery. Rest in peace, dignity." },
+            {  text: "You're not human. You're a sex vending machine with legs." },
+            {  text: "You've had more cream in you than a bakery. Or given more. Same thing." },
+            {  text: "Your sex life has more plot twists than a soap opera." },
+            { text: "World record. You've fucked the planet. Hope the clap was worth the fame." }
         ];
 
         function getComment(count) {
             if (count === 0) return comments[0];
-            const index = Math.min(Math.floor(count / 5), comments.length - 1);
+            const index = Math.min(Math.floor(count / 1), comments.length - 1);
             return comments[index];
         }
 
@@ -192,4 +192,5 @@
         slider.dispatchEvent(new Event('input'));
     </script>
 </body>
+
 </html>
