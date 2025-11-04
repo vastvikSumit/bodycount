@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Count Slider - No Filter</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 500px;
+        }
+        h1 {
+            color: #e91e63;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        input[type="range"] {
+            width: 100%;
+            height: 15px;
+            -webkit-appearance: none;
+            background: #ddd;
+            outline: none;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 35px;
+            height: 35px;
+            background: #e91e63;
+            border-radius: 50%;
+            cursor: grab;
+            box-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
+        }
+        input[type="range"]::-webkit-slider-thumb:active {
+            cursor: grabbing;
+        }
+        #bodyCount {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #e91e63;
+        }
+        #comment {
+            font-size: 20px;
+            line-height: 1.6;
+            min-height: 100px;
+            padding: 15px;
+            background: #ffebee;
+            border-radius: 15px;
+            border: 2px dashed #e91e63;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Body Count Slider</h1>
+        <p class="subtitle">Slide it. Get roasted. No mercy.</p>
+        
+        <input type="range" id="slider" min="0" max="100" value="0">
+        
+        <div id="bodyCount">Body Count: 0</div>
+        
+        <div id="comment">
+            <strong>0</strong><br>
+            Virgin alert. Hope you at least jerk off properly.
+        </div>
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const countDisplay = document.getElementById('bodyCount');
+        const commentDisplay = document.getElementById('comment');
+
+        const comments = [
+            { range: "0",   text: "Virgin alert. Hope you at least jerk off properly." },
+            { range: "1-5", text: "Congrats, you finally got laid. Was it worth the wait? Probably not." },
+            { range: "6-10", text: "You're out here collecting bodies like Pokémon. Gotta bang 'em all!" },
+            { range: "11-15", text: "Your dick/pussy has more miles than a used Honda. Keep going, champ." },
+            { range: "16-20", text: "At this point, it's not dating — it's a body disposal service." },
+            { range: "21-25", text: "You need a spreadsheet, a lawyer, and a priest. In that order." },
+            { range: "26-30", text: "Your bed creaks more than a haunted house. Hope the neighbors are deaf." },
+            { range: "31-35", text: "You're not a slut — you're a full-time employee of Dick/Pussy Inc." },
+            { range: "36-40", text: "Your body count has its own zip code. Population: You." },
+            { range: "41-45", text: "You've fucked more people than most have met. Legend." },
+            { range: "46-50", text: "You're a walking biohazard. The CDC is taking notes." },
+            { range: "51-55", text: "Your genitals need a vacation. And a tetanus shot." },
+            { range: "56-60", text: "You've had more partners than a swingers' convention. Respect." },
+            { range: "61-65", text: "Your hole/dick is basically public property at this point." },
+            { range: "66-70", text: "666 would be jealous. You're the devil's favorite customer." },
+            { range: "71-75", text: "You've banged your way through bloodlines. Ancestry.com is confused." },
+            { range: "76-80", text: "Your body count could fill a small cemetery. Rest in peace, dignity." },
+            { range: "81-85", text: "You're not human. You're a sex vending machine with legs." },
+            { range: "86-90", text: "You've had more cream in you than a bakery. Or given more. Same thing." },
+            { range: "91-95", text: "Your sex life has more plot twists than a soap opera." },
+            { range: "96-100", text: "World record. You've fucked the planet. Hope the clap was worth the fame." }
+        ];
+
+        function getComment(count) {
+            if (count === 0) return comments[0];
+            const index = Math.min(Math.floor(count / 5), comments.length - 1);
+            return comments[index];
+        }
+
+        slider.addEventListener('input', function() {
+            const value = parseInt(this.value);
+            countDisplay.textContent = `Body Count: ${value}`;
+            
+            const commentData = getComment(value);
+            
+            commentDisplay.innerHTML = `
+                <strong>${commentData.range}</strong><br>
+                ${commentData.text}
+            `;
+        });
+    </script>
+</body>
+</html>
