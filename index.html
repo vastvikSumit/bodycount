@@ -1,17 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Body Count Commenter</title>
+    <title>Body Count Slider - No Filter</title>
     <style>
-        /* Reset and base styles */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
@@ -22,7 +17,6 @@
             padding: 20px;
             color: #333;
         }
-
         .container {
             text-align: center;
             background: rgba(255, 255, 255, 0.95);
@@ -32,97 +26,34 @@
             max-width: 500px;
             width: 100%;
         }
-
-        h1 {
-            color: #e91e63;
-            margin-bottom: 10px;
-            font-size: 28px;
-        }
-
-        .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-style: italic;
-            font-size: 16px;
-        }
-
-        /* Slider styling */
+        h1 { color: #e91e63; margin-bottom: 10px; font-size: 28px; }
+        .subtitle { color: #666; margin-bottom: 30px; font-style: italic; font-size: 16px; }
         input[type="range"] {
-            width: 100%;
-            height: 15px;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background: #ddd;
-            outline: none;
-            border-radius: 10px;
-            margin: 25px 0;
+            width: 100%; height: 15px; appearance: none; -webkit-appearance: none; -moz-appearance: none;
+            background: #ddd; outline: none; border-radius: 10px; margin: 25px 0;
         }
-
         input[type="range"]::-webkit-slider-thumb {
-            appearance: none;
-            -webkit-appearance: none;
-            width: 35px;
-            height: 35px;
-            background: #e91e63;
-            border-radius: 50%;
-            cursor: grab;
-            box-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
+            appearance: none; -webkit-appearance: none;
+            width: 35px; height: 35px; background: #e91e63; border-radius: 50%;
+            cursor: grab; box-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
         }
-
-        input[type="range"]::-webkit-slider-thumb:active {
-            cursor: grabbing;
-        }
-
+        input[type="range"]::-webkit-slider-thumb:active { cursor: grabbing; }
         input[type="range"]::-moz-range-thumb {
-            width: 35px;
-            height: 35px;
-            background: #e91e63;
-            border-radius: 50%;
-            cursor: grab;
-            box-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
-            border: none;
+            width: 35px; height: 35px; background: #e91e63; border-radius: 50%;
+            cursor: grab; box-shadow: 0 0 10px rgba(233, 30, 99, 0.5); border: none;
         }
-
-        input[type="range"]::-moz-range-thumb:active {
-            cursor: grabbing;
-        }
-
-        #bodyCount {
-            font-size: 36px;
-            font-weight: bold;
-            margin: 20px 0;
-            color: #e91e63;
-        }
-
+        input[type="range"]::-moz-range-thumb:active { cursor: grabbing; }
+        #bodyCount { font-size: 36px; font-weight: bold; margin: 20px 0; color: #e91e63; }
         #comment {
-            font-size: 20px;
-            line-height: 1.6;
-            min-height: 100px;
-            padding: 18px;
-            background: #ffebee;
-            border-radius: 15px;
-            border: 2px dashed #e91e63;
-            margin-top: 20px;
-            font-weight: bold;
-            color: #c2185b;
+            font-size: 20px; line-height: 1.6; min-height: 100px; padding: 18px;
+            background: #ffebee; border-radius: 15px; border: 2px dashed #e91e63;
+            margin-top: 20px; font-weight: bold; color: #c2185b;
         }
-
-        /* Responsive */
         @media (max-width: 480px) {
-            .container {
-                padding: 25px;
-            }
-            h1 {
-                font-size: 24px;
-            }
-            #bodyCount {
-                font-size: 30px;
-            }
-            #comment {
-                font-size: 18px;
-                padding: 15px;
-            }
+            .container { padding: 25px; }
+            h1 { font-size: 24px; }
+            #bodyCount { font-size: 30px; }
+            #comment { font-size: 18px; padding: 15px; }
         }
     </style>
 </head>
@@ -130,15 +61,9 @@
     <div class="container">
         <h1>Body Count Slider</h1>
         <p class="subtitle">Slide it. Get roasted. No mercy.</p>
-        
         <input type="range" id="slider" min="0" max="100" value="0">
-        
         <div id="bodyCount">Body Count: 0</div>
-        
-        <div id="comment">
-            <strong>0</strong><br>
-            Virgin alert. Hope you at least jerk off properly.
-        </div>
+        <div id="comment">Virgin alert. Hope you at least jerk off properly.</div>
     </div>
 
     <script>
@@ -146,51 +71,118 @@
         const countDisplay = document.getElementById('bodyCount');
         const commentDisplay = document.getElementById('comment');
 
-        const comments = [
-            {      text: "Virgin alert. Hope you at least jerk off properly." },
-            {    text: "Congrats, you finally got laid. Was it worth the wait? Probably not." },
-            {   text: "You're out here collecting bodies like Pokémon. Gotta bang 'em all!" },
-            {  text: "Your dick/pussy has more miles than a used Honda. Keep going, champ." },
-            {  text: "At this point, it's not dating — it's a body disposal service." },
-            {  text: "You need a spreadsheet, a lawyer, and a priest. In that order." },
-            {  text: "Your bed creaks more than a haunted house. Hope the neighbors are deaf." },
-            {  text: "You're not a slut — you're a full-time employee of Dick/Pussy Inc." },
-            {  text: "Your body count has its own zip code. Population: You." },
-            {  text: "You've fucked more people than most have met. Legend." },
-            { text: "You're a walking biohazard. The CDC is taking notes." },
-            {  text: "Your genitals need a vacation. And a tetanus shot." },
-            {  text: "You've had more partners than a swingers' convention. Respect." },
-            {  text: "Your hole/dick is basically public property at this point." },
-            {  text: "666 would be jealous. You're the devil's favorite customer." },
-            {  text: "You've banged your way through bloodlines. Ancestry.com is confused." },
-            {  text: "Your body count could fill a small cemetery. Rest in peace, dignity." },
-            {  text: "You're not human. You're a sex vending machine with legs." },
-            {  text: "You've had more cream in you than a bakery. Or given more. Same thing." },
-            {  text: "Your sex life has more plot twists than a soap opera." },
-            { text: "World record. You've fucked the planet. Hope the clap was worth the fame." }
+        const roasts = [
+            "Virgin alert. Hope you at least jerk off properly.",
+            "First blood. Was it awkward? Yes. Yes it was.",
+            "Two? You're collecting like Pokémon cards.",
+            "Three's a crowd. But not in your bed.",
+            "Four play? More like four regrets.",
+            "Five alive. You're officially not a rookie.",
+            "Six? You're in the danger zone now.",
+            "Seven... heaven? Or just sloppy seconds?",
+            "Eight is enough to start a rumor.",
+            "Nine lives? You've used three already.",
+            "Double digits. Congrats, you're a collector.",
+            "11 — prime number, prime player.",
+            "12 — a full calendar. Monthly rotation?",
+            "13 — unlucky for some. Lucky for you.",
+            "14 — Valentine's Day came early... every week.",
+            "15 — you're halfway to legendary status.",
+            "16 — sweet sixteen, but not innocent.",
+            "17 — legal in most states. Barely.",
+            "18 — adulting level: expert.",
+            "19 — still going? Respect.",
+            "20 — you're not dating, you're networking.",
+            "21 — legal drinking age. You've earned a shot.",
+            "22 — catch 22: too many to remember.",
+            "23 — Michael Jordan would be proud.",
+            "24 — open all hours. 7-11 of sex.",
+            "25 — silver anniversary of bad decisions.",
+            "26 — over the hill? Nah, still climbing.",
+            "27 — club 27. But you're still alive.",
+            "28 — leap year baby? You leap into beds.",
+            "29 — last year of your 20s. Make it count.",
+            "30 — dirty thirty. And you are *filthy*.",
+            "31 — flavor of the month? Try daily.",
+            "32 — you're 32-bit. Fully upgraded.",
+            "33 — Jesus died at 33. You just keep going.",
+            "34 — mid-30s crisis? More like mid-30s *conquests*.",
+            "35 — ruby anniversary of regret.",
+            "36 — double 18. Double trouble.",
+            "37 — prime again. Prime time player.",
+            "38 — you're 38 hot. Temperature rising.",
+            "39 — last year before 40. Panic yet?",
+            "40 — over the hill and still rolling.",
+            "41 — you're not old, you're *experienced*.",
+            "42 — answer to life? Nah, just your body count.",
+            "43 — you're in your prime. Again.",
+            "44 — double 22. Double chaos.",
+            "45 — halfway to 90. Keep going.",
+            "46 — you're a walking HR violation.",
+            "47 — AK-47 of dating. Fully automatic.",
+            "48 — you're 48 laws of power... in bed.",
+            "49 — last stop before 50. Enjoy the ride.",
+            "50 — golden jubilee of bad choices.",
+            "51 — Area 51. Aliens want to study *you*.",
+            "52 — deck of cards. You've played them all.",
+            "53 — you're 53% done with 100. Keep pushing.",
+            "54 — you're a human bingo card.",
+            "55 — double nickel. Speed limit exceeded.",
+            "56 — you're 56k modem — outdated but still connecting.",
+            "57 — Heinz 57. Variety pack.",
+            "58 — you're 58 years from 100. Still time.",
+            "59 — last minute of the hour. Make it count.",
+            "60 — diamond anniversary of dick appointments.",
+            "61 — you're a highway. Everyone's been on you.",
+            "62 — Route 62 to Regret Town.",
+            "63 — you're a chess grandmaster of hookups.",
+            "64 — Nintendo 64. Classic player.",
+            "65 — retirement age? You're just getting started.",
+            "66 — Route 66. Get your kicks.",
+            "67 — you're a summer of '67. Free love.",
+            "68 — you ate, now they hate.",
+            "69 — nice. ( ͡° ͜ʖ ͡°)",
+            "70 — you're a 1970s porn star. Legend.",
+            "71 — you're 71% water. The rest is experience.",
+            "72 — you're a virgin... in dog years.",
+            "73 — you're a prime suspect in a love crime.",
+            "74 — you're a human slot machine. Jackpot every time.",
+            "75 — three-quarters to 100. Almost there.",
+            "76 — you're a trombone. Everyone's had a blow.",
+            "77 — double 7. Jackpot of judgment.",
+            "78 — you're a record. Everyone's played you.",
+            "79 — you're gold. 79 on the periodic table of players.",
+            "80 — you're 80% done. Final stretch.",
+            "81 — you're a Rubik's cube. Everyone's tried to solve you.",
+            "82 — you're a human library. Checked out often.",
+            "83 — you're a prime time TV slot. Everyone watches.",
+            "84 — you're a keyboard. Everyone's typed on you.",
+            "85 — you're a classic car. High mileage.",
+            "86 — deleted from most phones. But not all.",
+            "87 — you're a long movie. With sequels.",
+            "88 — double infinity. You're endless.",
+            "89 — you're a tennis score. Love-all.",
+            "90 — platinum anniversary of poor decisions.",
+            "91 — you're a highway exit. Everyone takes it.",
+            "92 — you're a human piñata. Everyone gets a swing.",
+            "93 — you're a flight. Delayed but still flying.",
+            "94 — you're a lottery ticket. Someone won big.",
+            "95 — last 5%. Final boss level.",
+            "96 — you're a baker's dozen. Times eight.",
+            "97 — you're a prime. Again. Impressive.",
+            "98 — Windows 98. Vintage player.",
+            "99 — one away from 100. So close.",
+            "100 — WORLD RECORD. You've fucked the planet. Hope the clap was worth the fame."
         ];
 
-        function getComment(count) {
-            if (count === 0) return comments[0];
-            const index = Math.min(Math.floor(count / 1), comments.length - 1);
-            return comments[index];
-        }
-
-        slider.addEventListener('input', function() {
-            const value = parseInt(this.value, 10);
+        slider.addEventListener('input', () => {
+            const value = parseInt(slider.value, 10);
             countDisplay.textContent = `Body Count: ${value}`;
-            
-            const commentData = getComment(value);
-            
-            commentDisplay.innerHTML = `
-                <strong>${commentData.range}</strong><br>
-                ${commentData.text}
-            `;
+            commentDisplay.textContent = roasts[value];
         });
 
-        // Trigger initial comment
+        // Init
         slider.dispatchEvent(new Event('input'));
     </script>
 </body>
-
 </html>
